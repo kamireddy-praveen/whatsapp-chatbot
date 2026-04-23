@@ -3,10 +3,12 @@ package com.example.whatsapp_chatbot;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 
 @RestController
 @RequestMapping("/webhook")
@@ -14,6 +16,11 @@ public class WebhookController {
 
     @Autowired
     private BotService botService;
+    @GetMapping
+    public String get() {
+        return "Whatsapp chatbot is running";
+    }
+    
 
 
     @PostMapping
